@@ -69,10 +69,10 @@ function Header() {
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
           {navItems.map((item) => <a key={item} href={`#${item.toLowerCase()}`} className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground">{item}</a>)}
         </nav>
-        <div className="hidden md:block"><ActionLink href="#pricing">Start Free <ArrowRight className="size-4" /></ActionLink></div>
+        <div className="hidden md:block"><ActionLink href="/dashboard">Open Dashboard <ArrowRight className="size-4" /></ActionLink></div>
         <button onClick={() => setOpen(!open)} className="grid size-10 place-items-center rounded-lg border border-border text-foreground md:hidden" aria-label={open ? "Close menu" : "Open menu"}>{open ? <X className="size-5" /> : <Menu className="size-5" />}</button>
       </div>
-      {open && <nav className="page-shell flex flex-col gap-1 border-t border-border py-4 md:hidden">{navItems.map((item) => <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-sm font-semibold hover:bg-secondary">{item}</a>)}<ActionLink href="#pricing" className="mt-2">Start Free</ActionLink></nav>}
+      {open && <nav className="page-shell flex flex-col gap-1 border-t border-border py-4 md:hidden">{navItems.map((item) => <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-sm font-semibold hover:bg-secondary">{item}</a>)}<ActionLink href="/dashboard" className="mt-2">Open Dashboard</ActionLink></nav>}
     </header>
   );
 }
@@ -122,7 +122,7 @@ function Hero() {
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-3 py-1.5 text-xs font-bold text-primary"><span className="size-1.5 rounded-full bg-primary" />Launching in the UK</div>
           <h1 className="text-[clamp(2.5rem,5vw,4.65rem)] font-extrabold leading-[1.04] tracking-[-0.035em]">Your Amazon Business, <span className="text-primary">Managed by AI.</span></h1>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-muted-foreground lg:mx-0">Stop digging through dashboards. AI Amazon Manager analyzes your Amazon data and tells you what changed, why it happened, and what you should do next.</p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start"><ActionLink href="#pricing">Start Free <ArrowRight className="size-4" /></ActionLink><ActionLink href="#product" variant="secondary"><Eye className="size-4" /> See How It Works</ActionLink></div>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start"><ActionLink href="/dashboard">Start Free <ArrowRight className="size-4" /></ActionLink><ActionLink href="/dashboard" variant="secondary"><Eye className="size-4" /> See How It Works</ActionLink></div>
           <p className="mt-4 text-xs font-medium text-muted-foreground"><CircleCheck className="mr-1 inline size-3.5 text-success" /> No credit card required</p>
         </div>
         <HeroDashboard />
